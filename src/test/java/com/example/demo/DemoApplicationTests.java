@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.student.AdditionalMethods;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class DemoApplicationTests {
 
 	@Test
-	void contextLoads() {
+	public static void main(String[] args) {
+		System.out.println(AdditionalMethods.isEmailValid("artak.es.karapetyan@gmail.com"));
+		System.out.println(AdditionalMethods.isEmailValid("@mail.com"));
 	}
 
 }
