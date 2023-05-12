@@ -25,10 +25,8 @@ public class StudentService {
     public void addNewStudent(Student student) {
         Optional<Student> studentOptional =
                 studentRepository.findStudentByEmail(student.getEmail());
-        if (AdditionalMethods.isEmailValid(student.getEmail())) {
-            if (studentOptional.isPresent()) {
-                throw new IllegalStateException("Email already taken");
-            }
+        if (AdditionalMethods.isEmailValid(student.getEmail()) && studentOptional.isPresent()) {
+            throw new IllegalStateException("Email already taken");
         }
         studentRepository.save(student);
     }
